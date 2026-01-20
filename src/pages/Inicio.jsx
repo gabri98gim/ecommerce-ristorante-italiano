@@ -9,7 +9,7 @@ export const Inicio = () => {
             <div
                 className="absolute inset-0 z-0 opacity-40"
                 style={{
-                    backgroundImage: 'url("https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&q=80")',
+                    backgroundImage: 'url("https://cdn2.cincinnatimagazine.com/wp-content/uploads/sites/5/2024/06/JUL24_Italian_Scottis-1920x1280.jpg")',
                     backgroundSize: 'cover',
                     backgroundPosition: 'center'
                 }}
@@ -18,7 +18,7 @@ export const Inicio = () => {
             <div className="relative z-10 max-w-6xl mx-auto px-4 text-white">
                 <div className="flex items-center gap-2 text-orange-500 mb-4">
                     <ChefHat size={40} />
-                    <span className="text-xl font-bold tracking-wider">NAPOLES RISTORANTE</span>
+                    <span className="text-xl font-bold tracking-wider">IL PASTICIO RISTORANTE</span>
                 </div>
 
                 <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">

@@ -5,6 +5,8 @@ import { ShoppingCart, ChefHat } from 'lucide-react'
 // Importamos nuestras páginas
 import { Inicio } from './pages/Inicio'
 import { Menu } from './pages/Menu'
+import { Contacto } from './pages/Contacto'
+import { Carrito } from './pages/Carrito'
 
 function App() {
   const [cart, setCart] = useState([])
@@ -17,40 +19,46 @@ function App() {
   return (
     <BrowserRouter>
       <div className="min-h-screen bg-gray-50 flex flex-col">
-        {/* BARRA DE NAVEGACIÓN (Se ve en todas las páginas) */}
+        {/* BARRA DE NAVEGACIÓN */}
         <nav className="bg-white shadow-md sticky top-0 z-50">
-          <div className="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+          <div className="max-w-6xl mx-auto px-4 py-4 flex items-center"> {/* Quitamos justify-between */}
 
-            {/* Logo que lleva al Inicio */}
-            <Link to="/" className="flex items-center gap-2 text-gray-800 hover:text-orange-500 transition-colors">
-              <ChefHat size={32} className="text-orange-500" />
-              <span className="text-xl font-bold">Napoles</span>
-            </Link>
+            {/* 1. BLOQUE IZQUIERDO (Logo) - Usamos flex-1 para que ocupe espacio */}
+            <div className="flex-1 flex justify-start">
+              <Link to="/" className="flex items-center gap-2 text-gray-800 hover:text-orange-500 transition-colors">
+                <ChefHat size={32} className="text-orange-500" />
+                <span className="text-xl font-bold">IL PASTICCIO</span>
+              </Link>
+            </div>
 
-            {/* Enlaces del menú */}
+            {/* 2. BLOQUE CENTRAL (Links) - Sin flex-1 para que no se estire */}
             <div className="hidden md:flex gap-8 font-medium text-gray-600">
               <Link to="/" className="hover:text-orange-500 transition-colors">Inicio</Link>
               <Link to="/menu" className="hover:text-orange-500 transition-colors">Menú</Link>
               <Link to="/contacto" className="hover:text-orange-500 transition-colors">Contacto</Link>
             </div>
 
-            {/* Botón del Carrito */}
-            <button className="relative p-2 hover:bg-gray-100 rounded-full transition-colors">
-              <ShoppingCart size={24} className="text-gray-600" />
-              {cart.length > 0 && (
-                <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs font-bold w-5 h-5 flex items-center justify-center rounded-full animate-bounce">
-                  {cart.length}
-                </span>
-              )}
-            </button>
+            {/* 3. BLOQUE DERECHO (Carrito) - flex-1 igual que el izquierdo */}
+            <div className="flex-1 flex justify-end">
+              <Link to="/carrito" className="relative p-2 hover:bg-gray-100 rounded-full transition-colors">
+                <ShoppingCart size={24} className="text-gray-600" />
+                {cart.length > 0 && (
+                  <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs font-bold w-5 h-5 flex items-center justify-center rounded-full animate-bounce">
+                    {cart.length}
+                  </span>
+                )}
+              </Link>
+            </div>
+
           </div>
         </nav>
 
-        {/* CONTENIDO CAMBIANTE (Aquí se cargan las páginas) */}
+
         <Routes>
           <Route path="/" element={<Inicio />} />
           <Route path="/menu" element={<Menu addToCart={addToCart} />} />
-          <Route path="/contacto" element={<div className="text-center py-20">Página de Contacto (En construcción 🚧)</div>} />
+          <Route path="/contacto" element={<Contacto />} />
+          <Route path="/carrito" element={<Carrito cart={cart} setCart={setCart} />} />
         </Routes>
 
       </div>
