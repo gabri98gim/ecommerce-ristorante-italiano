@@ -1,21 +1,31 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Trash2, ArrowLeft, CreditCard } from 'lucide-react';
-import toast from 'react-hot-toast'; // <--- Importante
+import { Trash2, CreditCard } from 'lucide-react';
+import toast from 'react-hot-toast';
+import { useCart } from '../context/CartContext'; // <--- 1. Importamos
 
-export const Carrito = ({ cart, setCart }) => {
+export const Carrito = () => {
+    // 2. Sacamos todo de la nube (incluso el total y la función clearCart)
+    const { cart, setCart, clearCart, total } = useCart();
 
-    const total = cart.reduce((sum, item) => sum + item.price, 0);
+    const handlePayment = () => {
+        toast.success("¡Pedido enviado a cocina! 👨‍🍳", {
+            duration: 4000,
+            position: "top-center",
+            style: { background: '#10B981', color: '#fff' }
+        });
+        setCart([]);
+    };
 
-    // ESTA ES LA FUNCIÓN CORRECTA (Sin window.confirm)
-    const clearCart = () => {
+    // Función auxiliar para confirmar borrado
+    const confirmClearCart = () => {
         toast((t) => (
             <div className="flex items-center gap-4">
                 <span>¿Borrar todo el pedido? 🗑️</span>
                 <div className="flex gap-2">
                     <button
                         onClick={() => {
-                            setCart([]);
+                            clearCart(); // Usamos la del contexto
                             toast.dismiss(t.id);
                             toast.success("Carrito vaciado");
                         }}
@@ -31,27 +41,9 @@ export const Carrito = ({ cart, setCart }) => {
                     </button>
                 </div>
             </div>
-        ), {
-            duration: 5000,
-            position: "top-center"
-        });
+        ), { duration: 5000, position: "top-center" });
     };
 
-    // Función para simular el pago
-    const handlePayment = () => {
-        // 1. Enseñamos el mensaje de éxito
-        toast.success("¡Pedido enviado a cocina! 👨‍🍳", {
-            duration: 4000,
-            position: "top-center",
-            style: {
-                background: '#10B981', // Verde éxito
-                color: '#fff',
-            }
-        });
-
-        // 2. Vaciamos el carrito
-        setCart([]);
-    };
     return (
         <div className="min-h-screen bg-gray-50 py-12 px-4">
             <div className="max-w-4xl mx-auto">
@@ -66,7 +58,6 @@ export const Carrito = ({ cart, setCart }) => {
                     </div>
                 ) : (
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-
                         <div className="md:col-span-2 space-y-4">
                             {cart.map((pizza, index) => (
                                 <div key={index} className="bg-white p-4 rounded-lg shadow-sm flex items-center gap-4">
@@ -80,7 +71,7 @@ export const Carrito = ({ cart, setCart }) => {
                             ))}
 
                             <button
-                                onClick={clearCart}
+                                onClick={confirmClearCart}
                                 className="text-red-500 text-sm flex items-center gap-2 hover:text-red-700 transition-colors mt-4"
                             >
                                 <Trash2 size={16} /> Vaciar pedido
@@ -91,6 +82,7 @@ export const Carrito = ({ cart, setCart }) => {
                             <h3 className="text-xl font-bold mb-4 border-b pb-2">Resumen</h3>
                             <div className="flex justify-between mb-2">
                                 <span className="text-gray-600">Subtotal</span>
+                                {/* Usamos el total que viene del contexto */}
                                 <span>{total.toFixed(2)}€</span>
                             </div>
                             <div className="flex justify-between mb-4">
@@ -104,7 +96,7 @@ export const Carrito = ({ cart, setCart }) => {
 
                             <button
                                 onClick={handlePayment}
-                                className="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 rounded-lg flex items-center justify-center gap-2 mb-3"
+                                className="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 rounded-lg flex items-center justify-center gap-2 mb-3 transition-colors"
                             >
                                 <CreditCard size={20} /> Pagar Ahora
                             </button>
@@ -113,7 +105,6 @@ export const Carrito = ({ cart, setCart }) => {
                                 Seguir pidiendo
                             </Link>
                         </div>
-
                     </div>
                 )}
             </div>
