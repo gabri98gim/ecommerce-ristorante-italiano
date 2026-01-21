@@ -1,11 +1,11 @@
 export const products = [
-    // --- PIZZAS ---
+    // --- PIZZAS (10) ---
     {
         id: 1,
         name: "Margarita D.O.P.",
         price: 9.99,
         ingredients: ["Salsa de tomate San Marzano", "Mozzarella di Bufala", "Albahaca fresca"],
-        image: "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=500&q=80",
+        image: "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=600&h=400&fit=crop&crop=center",
         category: "Pizzas"
     },
     {
@@ -13,77 +13,317 @@ export const products = [
         name: "Pepperoni Passion",
         price: 12.50,
         ingredients: ["Salsa de tomate", "Mozzarella", "Doble Pepperoni picante"],
-        image: "https://images.unsplash.com/photo-1628840042765-356cda07504e?auto=format&fit=crop&w=500&q=80",
+        image: "https://images.unsplash.com/photo-1628840042765-356cda07504e?w=600&h=400&fit=crop&crop=center",
         category: "Pizzas"
     },
     {
         id: 3,
-        name: "Tartufata",
+        name: "Tartufata Deluxe",
         price: 14.50,
-        ingredients: ["Crema de trufa", "Champiñones", "Mozzarella", "Rúcula"],
-        image: "https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=500&q=80",
+        ingredients: ["Crema de trufa negra", "Champiñones portobello", "Mozzarella", "Rúcula"],
+        image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=600&h=400&fit=crop&crop=center",
         category: "Pizzas"
     },
-
-    // --- PASTAS ---
     {
         id: 4,
-        name: "Spaghetti Carbonara",
-        price: 13.00,
-        ingredients: ["Guanciale crujiente", "Huevo", "Pecorino Romano", "Pimienta negra"],
-        image: "https://images.unsplash.com/photo-1612874742237-6526221588e3?auto=format&fit=crop&w=500&q=80",
-        category: "Pastas"
+        name: "Quattro Formaggi",
+        price: 13.50,
+        ingredients: ["Mozzarella", "Gorgonzola", "Parmesano", "Fontina"],
+        image: "https://images.unsplash.com/photo-1571997478779-2adcbbe9ab2f?w=600&h=400&fit=crop&crop=center",
+        category: "Pizzas"
     },
     {
         id: 5,
-        name: "Lasaña de la Nonna",
-        price: 12.00,
-        ingredients: ["Carne picada", "Bechamel casera", "Salsa de tomate", "Parmesano"],
-        image: "https://images.unsplash.com/photo-1574868309219-ce68df7144e2?auto=format&fit=crop&w=500&q=80",
-        category: "Pastas"
+        name: "Diavola Picante",
+        price: 12.90,
+        ingredients: ["Tomate", "Mozzarella", "Salami picante", "Guindilla fresca"],
+        image: "https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?w=600&h=400&fit=crop&crop=center",
+        category: "Pizzas"
     },
     {
         id: 6,
-        name: "Ravioli de Espinacas",
+        name: "Vegetariana Huerto",
         price: 11.50,
-        ingredients: ["Rellenos de ricotta y espinacas", "Salsa de mantequilla y salvia"],
-        image: "https://images.unsplash.com/photo-1587740986335-9c97aa8926eb?auto=format&fit=crop&w=500&q=80",
-        category: "Pastas"
+        ingredients: ["Pimientos", "Cebolla roja", "Aceitunas negras", "Champiñones", "Tomate"],
+        image: "https://images.unsplash.com/photo-1511689660979-10d2b1aada49?w=600&h=400&fit=crop&crop=center",
+        category: "Pizzas"
     },
-
-    // --- ENTRANTES ---
     {
         id: 7,
-        name: "Focaccia al Romero",
-        price: 6.50,
-        ingredients: ["Masa madre", "Aceite de oliva virgen extra", "Romero fresco", "Sal en escamas"],
-        image: "https://images.unsplash.com/photo-1626303279328-3e4010da55b7?auto=format&fit=crop&w=500&q=80",
-        category: "Entrantes"
+        name: "Capricciosa",
+        price: 13.00,
+        ingredients: ["Alcachofas", "Jamón cocido", "Champiñones", "Aceitunas"],
+        image: "https://images.unsplash.com/photo-1595854341625-f33ee10dbf94?w=600&h=400&fit=crop&crop=center",
+        category: "Pizzas"
     },
     {
         id: 8,
-        name: "Burrata Fresca",
-        price: 10.90,
-        ingredients: ["Burrata cremosa", "Tomates cherry", "Pesto genovés", "Rúcula"],
-        image: "https://images.unsplash.com/photo-1626844131082-256783844137?auto=format&fit=crop&w=500&q=80",
-        category: "Entrantes"
+        name: "Prosciutto e Funghi",
+        price: 12.00,
+        ingredients: ["Tomate", "Mozzarella", "Jamón york", "Champiñones frescos"],
+        image: "https://images.unsplash.com/photo-1458642849426-cfb724f15ef7?w=600&h=400&fit=crop&crop=center",
+        category: "Pizzas"
     },
-
-    // --- POSTRES ---
     {
         id: 9,
-        name: "Tiramisú Clásico",
-        price: 7.00,
-        ingredients: ["Mascarpone", "Café espresso", "Bizcochos savoiardi", "Cacao"],
-        image: "https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?auto=format&fit=crop&w=500&q=80",
-        category: "Postres"
+        name: "Barbacoa Italiana",
+        price: 13.90,
+        ingredients: ["Carne picada", "Salsa barbacoa", "Cebolla caramelizada", "Bacon"],
+        image: "https://images.unsplash.com/photo-1513104890138-7c749659a591?w=600&h=400&fit=crop&crop=center",
+        category: "Pizzas"
     },
     {
         id: 10,
+        name: "Calzone Relleno",
+        price: 14.00,
+        ingredients: ["Relleno de ricotta", "Espinacas", "Jamón", "Huevo (cerrada)"],
+        image: "https://images.unsplash.com/photo-1593504049359-74330189a345?w=600&h=400&fit=crop&crop=center",
+        category: "Pizzas"
+    },
+
+    // --- PASTAS (10) ---
+    {
+        id: 11,
+        name: "Spaghetti Carbonara",
+        price: 13.00,
+        ingredients: ["Guanciale crujiente", "Huevo", "Pecorino Romano", "Pimienta negra"],
+        image: "https://images.unsplash.com/photo-1612874742237-6526221588e3?w=600&h=400&fit=crop&crop=center",
+        category: "Pastas"
+    },
+    {
+        id: 12,
+        name: "Lasaña de la Nonna",
+        price: 12.00,
+        ingredients: ["Carne picada", "Bechamel casera", "Salsa de tomate", "Parmesano"],
+        image: "https://images.unsplash.com/photo-1574894709920-11b28e7367e3?w=600&h=400&fit=crop&crop=center",
+        category: "Pastas"
+    },
+    {
+        id: 13,
+        name: "Ravioli Espinacas",
+        price: 11.50,
+        ingredients: ["Rellenos de ricotta y espinacas", "Salsa de mantequilla y salvia"],
+        image: "https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=600&h=400&fit=crop&crop=center",
+        category: "Pastas"
+    },
+    {
+        id: 14,
+        name: "Fettuccine Alfredo",
+        price: 12.50,
+        ingredients: ["Salsa cremosa de parmesano", "Mantequilla", "Perejil"],
+        image: "https://images.unsplash.com/photo-1645112411341-6c4fd023714a?w=600&h=400&fit=crop&crop=center",
+        category: "Pastas"
+    },
+    {
+        id: 15,
+        name: "Spaghetti Bolognese",
+        price: 11.90,
+        ingredients: ["Salsa de carne tradicional", "Tomate", "Hierbas italianas"],
+        image: "https://images.unsplash.com/photo-1627308595229-7830a5c91f9f?w=600&h=400&fit=crop&crop=center",
+        category: "Pastas"
+    },
+    {
+        id: 16,
+        name: "Penne all'Arrabbiata",
+        price: 10.90,
+        ingredients: ["Salsa de tomate picante", "Ajo", "Guindilla", "Perejil"],
+        image: "https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=600&h=400&fit=crop&crop=center",
+        category: "Pastas"
+    },
+    {
+        id: 17,
+        name: "Tagliatelle al Pesto",
+        price: 12.50,
+        ingredients: ["Pesto genovés casero", "Piñones", "Albahaca", "Parmesano"],
+        image: "https://images.unsplash.com/photo-1473093295043-cdd812d0e601?w=600&h=400&fit=crop&crop=center",
+        category: "Pastas"
+    },
+    {
+        id: 18,
+        name: "Gnocchi Sorrentina",
+        price: 13.50,
+        ingredients: ["Ñoquis de patata", "Salsa de tomate", "Mozzarella fundida"],
+        image: "https://images.unsplash.com/photo-1637165435936-3936075b6719?w=600&h=400&fit=crop&crop=center",
+        category: "Pastas"
+    },
+    {
+        id: 19,
+        name: "Linguine Frutti di Mare",
+        price: 15.90,
+        ingredients: ["Mejillones", "Gambas", "Calamares", "Vino blanco"],
+        image: "https://images.unsplash.com/photo-1563379926898-05f4575a45d8?w=600&h=400&fit=crop&crop=center",
+        category: "Pastas"
+    },
+    {
+        id: 20,
+        name: "Rigatoni Tartufo",
+        price: 16.00,
+        ingredients: ["Salsa de trufa negra", "Nata", "Champiñones", "Parmesano"],
+        image: "https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=600&h=400&fit=crop&crop=center",
+        category: "Pastas"
+    },
+
+    // --- ENTRANTES (10) ---
+    {
+        id: 21,
+        name: "Focaccia al Romero",
+        price: 6.50,
+        ingredients: ["Masa madre", "Aceite de oliva virgen extra", "Romero fresco", "Sal"],
+        image: "https://images.unsplash.com/photo-1601050690597-df0568f70950?w=600&h=400&fit=crop&crop=center",
+        category: "Entrantes"
+    },
+    {
+        id: 22,
+        name: "Burrata Fresca",
+        price: 10.90,
+        ingredients: ["Burrata cremosa", "Tomates cherry", "Pesto genovés", "Rúcula"],
+        image: "https://images.unsplash.com/photo-1608697080028-35d5761b46f0?w=600&h=400&fit=crop&crop=center",
+        category: "Entrantes"
+    },
+    {
+        id: 23,
+        name: "Bruschetta Pomodoro",
+        price: 7.50,
+        ingredients: ["Pan tostado", "Tomate picado", "Ajo", "Albahaca"],
+        image: "https://images.unsplash.com/photo-1506280754576-f6fa8a873550?w=600&h=400&fit=crop&crop=center",
+        category: "Entrantes"
+    },
+    {
+        id: 24,
+        name: "Carpaccio de Ternera",
+        price: 12.00,
+        ingredients: ["Láminas finas de ternera", "Parmesano", "Alcaparras", "Limón"],
+        image: "https://images.unsplash.com/photo-1594756202469-9ff9799b2e4e?w=600&h=400&fit=crop&crop=center",
+        category: "Entrantes"
+    },
+    {
+        id: 25,
+        name: "Arancini Siciliani",
+        price: 8.50,
+        ingredients: ["Bolas de arroz fritas", "Rellenas de ragú", "Mozzarella"],
+        image: "https://images.unsplash.com/photo-1615870216519-2f9fa575fa5c?w=600&h=400&fit=crop&crop=center",
+        category: "Entrantes"
+    },
+    {
+        id: 26,
+        name: "Insalata Caprese",
+        price: 9.50,
+        ingredients: ["Tomate en rodajas", "Mozzarella fresca", "Albahaca", "Aceite"],
+        image: "https://images.unsplash.com/photo-1592417817098-8fd3d9eb14a5?w=600&h=400&fit=crop&crop=center",
+        category: "Entrantes"
+    },
+    {
+        id: 27,
+        name: "Provoleta Fundida",
+        price: 9.00,
+        ingredients: ["Queso provolone fundido", "Orégano", "Tomate seco"],
+        image: "https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?w=600&h=400&fit=crop&crop=center",
+        category: "Entrantes"
+    },
+    {
+        id: 28,
+        name: "Tabla de Antipasto",
+        price: 15.00,
+        ingredients: ["Surtido de embutidos italianos", "Quesos", "Aceitunas"],
+        image: "https://images.unsplash.com/photo-1541529086526-db283c563270?w=600&h=400&fit=crop&crop=center",
+        category: "Entrantes"
+    },
+    {
+        id: 29,
+        name: "Calamares a la Romana",
+        price: 11.00,
+        ingredients: ["Anillas de calamar rebozadas", "Limón", "Salsa tártara"],
+        image: "https://images.unsplash.com/photo-1604909052743-94e838986d24?w=600&h=400&fit=crop&crop=center",
+        category: "Entrantes"
+    },
+    {
+        id: 30,
+        name: "Melanzane Parmigiana",
+        price: 10.50,
+        ingredients: ["Berenjenas al horno", "Tomate", "Parmesano", "Albahaca"],
+        image: "https://images.unsplash.com/photo-1546549032-9571cd6b27df?w=600&h=400&fit=crop&crop=center",
+        category: "Entrantes"
+    },
+
+    // --- POSTRES (10) ---
+    {
+        id: 31,
+        name: "Tiramisú Clásico",
+        price: 7.00,
+        ingredients: ["Mascarpone", "Café espresso", "Bizcochos savoiardi", "Cacao"],
+        image: "https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?w=600&h=400&fit=crop&crop=center",
+        category: "Postres"
+    },
+    {
+        id: 32,
         name: "Panna Cotta",
         price: 6.50,
         ingredients: ["Nata cocida", "Vainilla natural", "Coulis de frutos rojos"],
-        image: "https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=500&q=80",
+        image: "https://images.unsplash.com/photo-1488477181946-6428a0291777?w=600&h=400&fit=crop&crop=center",
+        category: "Postres"
+    },
+    {
+        id: 33,
+        name: "Cannoli Siciliano",
+        price: 5.50,
+        ingredients: ["Masa frita crujiente", "Relleno de ricotta dulce", "Pistacho", "Chocolate"],
+        image: "https://images.unsplash.com/photo-1519915212116-7cfef71f1d3e?w=600&h=400&fit=crop&crop=center",
+        category: "Postres"
+    },
+    {
+        id: 34,
+        name: "Gelato Artigianale",
+        price: 5.00,
+        ingredients: ["Helado casero", "Vainilla de Madagascar", "Chocolate belga"],
+        image: "https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=600&h=400&fit=crop&crop=center",
+        category: "Postres"
+    },
+    {
+        id: 35,
+        name: "Affogato al Caffè",
+        price: 6.00,
+        ingredients: ["Bola de helado de vainilla", "Chorro de café espresso caliente"],
+        image: "https://images.unsplash.com/photo-1514481538271-cf9f99627ab4?w=600&h=400&fit=crop&crop=center",
+        category: "Postres"
+    },
+    {
+        id: 36,
+        name: "Torta della Nonna",
+        price: 7.50,
+        ingredients: ["Tarta de crema pastelera", "Piñones", "Azúcar glas"],
+        image: "https://images.unsplash.com/photo-1586985289688-ca3cf47d3e6e?w=600&h=400&fit=crop&crop=center",
+        category: "Postres"
+    },
+    {
+        id: 37,
+        name: "Profiteroles",
+        price: 6.90,
+        ingredients: ["Bolas de pasta choux", "Rellenas de nata", "Salsa de chocolate caliente"],
+        image: "https://images.unsplash.com/photo-1606313564558-b61c39e764b6?w=600&h=400&fit=crop&crop=center",
+        category: "Postres"
+    },
+    {
+        id: 38,
+        name: "Semifrío de Limón",
+        price: 6.00,
+        ingredients: ["Mousse helada de limón", "Base de galleta", "Menta"],
+        image: "https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=600&h=400&fit=crop&crop=center",
+        category: "Postres"
+    },
+    {
+        id: 39,
+        name: "Zabaione",
+        price: 7.20,
+        ingredients: ["Crema de yema de huevo", "Azúcar", "Vino dulce Marsala"],
+        image: "https://images.unsplash.com/photo-1587314168485-3236d6710814?w=600&h=400&fit=crop&crop=center",
+        category: "Postres"
+    },
+    {
+        id: 40,
+        name: "Cheesecake de Ricotta",
+        price: 7.80,
+        ingredients: ["Queso ricotta", "Base de galleta", "Mermelada de higos"],
+        image: "https://images.unsplash.com/photo-1524351199678-941a58a3df50?w=600&h=400&fit=crop&crop=center",
         category: "Postres"
     }
 ];

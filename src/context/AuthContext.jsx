@@ -1,6 +1,5 @@
 import { createContext, useState, useContext } from 'react';
 import toast from 'react-hot-toast';
-import { useNavigate } from 'react-router-dom';
 
 const AuthContext = createContext();
 
@@ -11,14 +10,22 @@ export const useAuth = () => {
 };
 
 export const AuthProvider = ({ children }) => {
-    // Estado del usuario (null = no logueado)
-    const [user, setUser] = useState(null);
+    // 1. INICIALIZACIÓN INTELIGENTE:
+    // En vez de empezar en 'null', miramos si hay algo guardado en el navegador
+    const [user, setUser] = useState(() => {
+        const savedUser = localStorage.getItem('user');
+        return savedUser ? JSON.parse(savedUser) : null;
+    });
 
-    // Función para LOGIN (Simulada)
     const login = (email, password) => {
-        // Simulamos que comprobamos la contraseña
         if (password === "1234") {
-            setUser({ email, name: "Mario Rossi" }); // Creamos un usuario falso
+            const newUser = { email, name: "Mario Rossi" };
+
+            setUser(newUser);
+
+            // 2. GUARDAR: Al loguearse, lo grabamos en el navegador
+            localStorage.setItem('user', JSON.stringify(newUser));
+
             toast.success("¡Bienvenido de nuevo, Mario! 👋", {
                 style: { background: '#10B981', color: '#fff' }
             });
@@ -29,9 +36,12 @@ export const AuthProvider = ({ children }) => {
         }
     };
 
-    // Función para LOGOUT
     const logout = () => {
         setUser(null);
+
+        // 3. BORRAR: Al salir, limpiamos el rastro del navegador
+        localStorage.removeItem('user');
+
         toast("Sesión cerrada", { icon: '👋' });
     };
 
