@@ -7,34 +7,44 @@ import { Heart } from 'lucide-react';
 export const Favoritos = () => {
     const { favorites } = useFavorites();
 
-    return (
-        <div className="min-h-screen bg-gray-50 py-12 px-4">
-            <div className="max-w-6xl mx-auto">
-                <div className="flex items-center gap-3 mb-8">
-                    <Heart className="text-red-500" size={32} fill="currentColor" />
-                    <h1 className="text-3xl font-bold text-gray-800">Mis Favoritos</h1>
+    if (favorites.length === 0) {
+        return (
+            <div className="min-h-[60vh] flex flex-col items-center justify-center text-center px-4 animate-fade-in">
+                <div className="bg-gray-100 dark:bg-slate-800 p-6 rounded-full mb-6 transition-colors">
+                    <Heart size={60} className="text-gray-400 dark:text-gray-500" />
                 </div>
+                {/* TEXTOS ADAPTADOS AL MODO OSCURO */}
+                <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-3">
+                    No tienes favoritos aún
+                </h2>
+                <p className="text-gray-500 dark:text-gray-400 mb-8 max-w-md">
+                    Dale al corazón ❤️ en los platos que más te gusten para guardarlos aquí.
+                </p>
+                <Link
+                    to="/menu"
+                    className="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-full transition-colors shadow-lg shadow-orange-500/30"
+                >
+                    Explorar el Menú
+                </Link>
+            </div>
+        );
+    }
 
-                {favorites.length === 0 ? (
-                    // SI NO HAY FAVORITOS
-                    <div className="text-center py-20 bg-white rounded-xl shadow-sm border border-gray-100">
-                        <div className="bg-red-50 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <Heart className="text-red-300" size={32} />
-                        </div>
-                        <h2 className="text-2xl font-bold text-gray-700 mb-2">Aún no tienes favoritos</h2>
-                        <p className="text-gray-500 mb-6">Guarda los platos que más te gusten para pedirlos luego.</p>
-                        <Link to="/menu" className="bg-orange-500 text-white px-6 py-2 rounded-full font-bold hover:bg-orange-600 transition-colors">
-                            Explorar Menú
-                        </Link>
-                    </div>
-                ) : (
-                    // SI HAY FAVORITOS (Reutilizamos la grilla del menú)
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {favorites.map((pizza) => (
-                            <PizzaCard key={pizza.id} pizza={pizza} />
-                        ))}
-                    </div>
-                )}
+    return (
+        <div className="max-w-6xl mx-auto px-4 py-12 animate-fade-in">
+            <div className="text-center mb-12">
+                <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-4">
+                    Mis Favoritos ❤️
+                </h2>
+                <p className="text-gray-600 dark:text-gray-300">
+                    Tus platos preferidos, listos para pedir.
+                </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {favorites.map((product) => (
+                    <PizzaCard key={product.id} pizza={product} />
+                ))}
             </div>
         </div>
     );

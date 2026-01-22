@@ -1,12 +1,11 @@
 import { useState } from 'react'
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
-// Importamos los iconos Sun y Moon
 import { ShoppingCart, ChefHat, Menu as MenuIcon, X, User, Heart, Sun, Moon } from 'lucide-react'
 import { Toaster } from 'react-hot-toast'
 import { useCart } from './context/CartContext'
 import { useAuth } from './context/AuthContext'
 import { useFavorites } from './context/FavoritesContext'
-import { useTheme } from './context/ThemeContext' // <--- Importante
+import { useTheme } from './context/ThemeContext'
 import { ProtectedRoute } from './components/ProtectedRoute'
 
 // Páginas
@@ -28,13 +27,12 @@ function App() {
   const { cart } = useCart()
   const { user, logout } = useAuth()
   const { favorites } = useFavorites()
-  const { theme, toggleTheme } = useTheme() // <--- Usamos el tema
+  const { theme, toggleTheme } = useTheme()
 
   const closeMenu = () => setIsMenuOpen(false)
 
   return (
     <BrowserRouter>
-      {/* CLASE PRINCIPAL: dark:bg-slate-900 */}
       <div className="min-h-screen bg-gray-50 dark:bg-slate-900 dark:text-gray-100 flex flex-col transition-colors duration-300">
 
         <nav className="bg-white dark:bg-slate-800 shadow-md sticky top-0 z-50 transition-colors duration-300 border-b border-transparent dark:border-slate-700">
@@ -65,24 +63,26 @@ function App() {
             {/* 3. DERECHA */}
             <div className="flex-1 flex justify-end items-center gap-4">
 
-              {/* --- AQUÍ ESTÁ EL BOTÓN QUE TE FALTA 👇 --- */}
+              {/* MODO OSCURO */}
               <button
                 onClick={toggleTheme}
                 className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-slate-700 text-gray-600 dark:text-yellow-400 transition-colors"
               >
                 {theme === 'light' ? <Moon size={20} /> : <Sun size={20} />}
               </button>
-              {/* ------------------------------------------ */}
 
+              {/* FAVORITOS (LOGIC UPDATE) */}
               <Link to="/favoritos" className="relative hover:text-red-500 transition-colors text-gray-600 dark:text-gray-300" onClick={closeMenu}>
                 <Heart size={24} />
-                {favorites.length > 0 && (
+                {/* CAMBIO AQUÍ: Solo mostramos la bolita si hay USER y hay FAVORITOS */}
+                {user && favorites.length > 0 && (
                   <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs font-bold w-4 h-4 flex items-center justify-center rounded-full animate-bounce">
                     {favorites.length}
                   </span>
                 )}
               </Link>
 
+              {/* USUARIO */}
               {user ? (
                 <div className="flex items-center gap-3 border-l pl-4 border-gray-200 dark:border-gray-700">
                   <Link to="/perfil" className="text-sm font-bold text-gray-700 dark:text-gray-200 hover:text-orange-500 hidden sm:block">
@@ -103,6 +103,7 @@ function App() {
                 </Link>
               )}
 
+              {/* CARRITO */}
               <Link to="/carrito" className="relative p-2 hover:bg-gray-100 dark:hover:bg-slate-700 rounded-full transition-colors" onClick={closeMenu}>
                 <ShoppingCart size={24} className="text-gray-600 dark:text-gray-300" />
                 {cart.length > 0 && (
@@ -121,7 +122,6 @@ function App() {
               <Link to="/menu" onClick={closeMenu} className="hover:text-orange-500 p-2">Menú</Link>
               <Link to="/favoritos" onClick={closeMenu} className="hover:text-orange-500 p-2 flex items-center gap-2"><Heart size={20} /> Favoritos</Link>
 
-              {/* BOTÓN EN MÓVIL TAMBIÉN */}
               <div className="border-t border-gray-100 dark:border-gray-700 pt-2 mt-2">
                 <button onClick={() => { toggleTheme(); closeMenu(); }} className="flex items-center gap-2 p-2 w-full text-left hover:text-orange-500">
                   {theme === 'light' ? <><Moon size={20} /> Modo Oscuro</> : <><Sun size={20} /> Modo Claro</>}

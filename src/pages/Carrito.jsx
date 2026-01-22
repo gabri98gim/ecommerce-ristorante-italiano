@@ -1,12 +1,32 @@
 import React from 'react';
 import { useCart } from '../context/CartContext';
+import { useAuth } from '../context/AuthContext';
+import { useNavigate } from 'react-router-dom';
 import { Trash2, ArrowRight, ShoppingBag } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import toast from 'react-hot-toast';
 
 export const Carrito = () => {
-    const { cart, removeFromCart, total } = useCart();
-    const envio = 1.25;
-    const totalFinal = total + envio;
+    // 1. IMPORTANTE: Sacamos 'clearCart' del contexto
+    const { cart, removeFromCart, clearCart, total } = useCart();
+    const { user } = useAuth();
+    const navigate = useNavigate();
+
+    const handleCheckout = () => {
+        if (!user) {
+            toast.error("Debes iniciar sesión para tramitar el pedido 🔒");
+            navigate('/login');
+            return;
+        }
+
+        // 2. ÉXITO: Mostramos mensaje Y vaciamos el carrito
+        toast.success(`¡Gracias ${user.name}! Tu pedido está en marcha 🛵🍕`, {
+            duration: 5000,
+            icon: '👨‍🍳'
+        });
+
+        clearCart(); // <--- ¡AQUÍ ESTÁ LA MAGIA! 🧹
+    };
 
     if (cart.length === 0) {
         return (
@@ -30,10 +50,9 @@ export const Carrito = () => {
 
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
 
-                {/* LISTA DE PRODUCTOS (Izquierda) */}
+                {/* LISTA DE PRODUCTOS */}
                 <div className="lg:col-span-2 space-y-4">
                     {cart.map((item, index) => (
-                        // CAJA PRODUCTO: dark:bg-slate-800
                         <div key={index} className="flex items-center gap-4 bg-white dark:bg-slate-800 p-4 rounded-xl shadow-sm border border-gray-100 dark:border-slate-700 transition-colors">
                             <img
                                 src={item.image}
@@ -63,9 +82,8 @@ export const Carrito = () => {
                     </Link>
                 </div>
 
-                {/* RESUMEN DEL PEDIDO (Derecha) */}
+                {/* RESUMEN DEL PEDIDO */}
                 <div className="h-fit">
-                    {/* CAJA RESUMEN: dark:bg-slate-800 */}
                     <div className="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-lg border border-gray-100 dark:border-slate-700 sticky top-24 transition-colors">
                         <h2 className="text-xl font-bold text-slate-900 dark:text-white mb-6 border-b border-gray-100 dark:border-slate-700 pb-4">
                             Resumen
@@ -91,7 +109,10 @@ export const Carrito = () => {
                             <span>{total.toFixed(2)}€</span>
                         </div>
 
-                        <button className="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-4 rounded-xl shadow-lg shadow-orange-500/30 flex items-center justify-center gap-2 transition-transform active:scale-95">
+                        <button
+                            onClick={handleCheckout}
+                            className="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-4 rounded-xl shadow-lg shadow-orange-500/30 flex items-center justify-center gap-2 transition-transform active:scale-95"
+                        >
                             Pagar Ahora <ArrowRight size={20} />
                         </button>
                     </div>

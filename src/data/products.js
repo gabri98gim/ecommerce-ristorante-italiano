@@ -103,7 +103,7 @@ export const products = [
         name: "Ravioli Espinacas",
         price: 11.50,
         ingredients: ["Rellenos de ricotta y espinacas", "Salsa de mantequilla y salvia"],
-        image: "https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=600&h=400&fit=crop&crop=center",
+        image: "https://img2.rtve.es/n/2049540",
         category: "Pastas"
     },
     {
@@ -119,7 +119,7 @@ export const products = [
         name: "Spaghetti Bolognese",
         price: 11.90,
         ingredients: ["Salsa de carne tradicional", "Tomate", "Hierbas italianas"],
-        image: "https://images.unsplash.com/photo-1627308595229-7830a5c91f9f?w=600&h=400&fit=crop&crop=center",
+        image: "https://img.taste.com.au/5qlr1PkR/taste/2016/11/spaghetti-bolognese-106560-1.jpeg",
         category: "Pastas"
     },
     {
@@ -127,7 +127,7 @@ export const products = [
         name: "Penne all'Arrabbiata",
         price: 10.90,
         ingredients: ["Salsa de tomate picante", "Ajo", "Guindilla", "Perejil"],
-        image: "https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=600&h=400&fit=crop&crop=center",
+        image: "https://www.giallozafferano.es/images/3-396/Penne-all-Arrabbiata_1200x800.jpg",
         category: "Pastas"
     },
     {
@@ -143,7 +143,7 @@ export const products = [
         name: "Gnocchi Sorrentina",
         price: 13.50,
         ingredients: ["Ñoquis de patata", "Salsa de tomate", "Mozzarella fundida"],
-        image: "https://images.unsplash.com/photo-1637165435936-3936075b6719?w=600&h=400&fit=crop&crop=center",
+        image: "https://static.tecnichenuove.it/cucinanaturale/2023/05/gnocchi-sorrentina.jpg",
         category: "Pastas"
     },
     {
@@ -151,7 +151,7 @@ export const products = [
         name: "Linguine Frutti di Mare",
         price: 15.90,
         ingredients: ["Mejillones", "Gambas", "Calamares", "Vino blanco"],
-        image: "https://images.unsplash.com/photo-1563379926898-05f4575a45d8?w=600&h=400&fit=crop&crop=center",
+        image: "https://blog.giallozafferano.it/adryincucina/wp-content/uploads/2016/08/linguine-ai-frutti-di-mare.jpg",
         category: "Pastas"
     },
     {
@@ -159,7 +159,7 @@ export const products = [
         name: "Rigatoni Tartufo",
         price: 16.00,
         ingredients: ["Salsa de trufa negra", "Nata", "Champiñones", "Parmesano"],
-        image: "https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=600&h=400&fit=crop&crop=center",
+        image: "https://media.scoolinary.app/recipes/images/2022/08/rigatoni-con-tartufo.jpg",
         category: "Pastas"
     },
 
@@ -169,7 +169,7 @@ export const products = [
         name: "Focaccia al Romero",
         price: 6.50,
         ingredients: ["Masa madre", "Aceite de oliva virgen extra", "Romero fresco", "Sal"],
-        image: "https://images.unsplash.com/photo-1601050690597-df0568f70950?w=600&h=400&fit=crop&crop=center",
+        image: "https://cdn.recetasderechupete.com/wp-content/uploads/2019/02/Focaccia.jpg",
         category: "Entrantes"
     },
     {
@@ -177,7 +177,7 @@ export const products = [
         name: "Burrata Fresca",
         price: 10.90,
         ingredients: ["Burrata cremosa", "Tomates cherry", "Pesto genovés", "Rúcula"],
-        image: "https://images.unsplash.com/photo-1608697080028-35d5761b46f0?w=600&h=400&fit=crop&crop=center",
+        image: "https://img2.rtve.es/n/2417107",
         category: "Entrantes"
     },
     {
@@ -185,7 +185,7 @@ export const products = [
         name: "Bruschetta Pomodoro",
         price: 7.50,
         ingredients: ["Pan tostado", "Tomate picado", "Ajo", "Albahaca"],
-        image: "https://images.unsplash.com/photo-1506280754576-f6fa8a873550?w=600&h=400&fit=crop&crop=center",
+        image: "https://lamesadelconde.es/wp-content/uploads/2014/11/bruschetta-al-pomodoro-e-fomraggio-A-Tavola-con-il-conte.jpg",
         category: "Entrantes"
     },
     {
@@ -193,7 +193,7 @@ export const products = [
         name: "Carpaccio de Ternera",
         price: 12.00,
         ingredients: ["Láminas finas de ternera", "Parmesano", "Alcaparras", "Limón"],
-        image: "https://images.unsplash.com/photo-1594756202469-9ff9799b2e4e?w=600&h=400&fit=crop&crop=center",
+        image: "https://aceitesandua.com/wp-content/uploads/2017/08/carpaccio.jpg",
         category: "Entrantes"
     },
     {
@@ -201,7 +201,7 @@ export const products = [
         name: "Arancini Siciliani",
         price: 8.50,
         ingredients: ["Bolas de arroz fritas", "Rellenas de ragú", "Mozzarella"],
-        image: "https://images.unsplash.com/photo-1615870216519-2f9fa575fa5c?w=600&h=400&fit=crop&crop=center",
+        image: "https://www.giallozafferano.es/images/3-310/Arancini-de-arroz_1200x800.jpg",
         category: "Entrantes"
     },
     {
@@ -209,7 +209,7 @@ export const products = [
         name: "Insalata Caprese",
         price: 9.50,
         ingredients: ["Tomate en rodajas", "Mozzarella fresca", "Albahaca", "Aceite"],
-        image: "https://images.unsplash.com/photo-1592417817098-8fd3d9eb14a5?w=600&h=400&fit=crop&crop=center",
+        image: "https://www.eleceidiomas.com/wp-content/uploads/2024/05/831-970x600-1.jpg",
         category: "Entrantes"
     },
     {
@@ -217,7 +217,7 @@ export const products = [
         name: "Provoleta Fundida",
         price: 9.00,
         ingredients: ["Queso provolone fundido", "Orégano", "Tomate seco"],
-        image: "https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?w=600&h=400&fit=crop&crop=center",
+        image: "https://rms-media-prod.generalmills.com/99b812c8-1c0b-4838-b7be-ed32ddc2920a.jpg",
         category: "Entrantes"
     },
     {
@@ -233,7 +233,7 @@ export const products = [
         name: "Calamares a la Romana",
         price: 11.00,
         ingredients: ["Anillas de calamar rebozadas", "Limón", "Salsa tártara"],
-        image: "https://images.unsplash.com/photo-1604909052743-94e838986d24?w=600&h=400&fit=crop&crop=center",
+        image: "https://www.gallinablanca.es/wp-content/uploads/2018/07/154018571555fbcb7e60f62e2a7db9aa3680abeeb9.jpg",
         category: "Entrantes"
     },
     {
@@ -241,7 +241,7 @@ export const products = [
         name: "Melanzane Parmigiana",
         price: 10.50,
         ingredients: ["Berenjenas al horno", "Tomate", "Parmesano", "Albahaca"],
-        image: "https://images.unsplash.com/photo-1546549032-9571cd6b27df?w=600&h=400&fit=crop&crop=center",
+        image: "https://www.fattoincasadabenedetta.it/wp-content/uploads/2025/05/PARMIGIANA-DI-MELANZANE-AL-FORNO-16-9.jpg",
         category: "Entrantes"
     },
 
@@ -251,7 +251,7 @@ export const products = [
         name: "Tiramisú Clásico",
         price: 7.00,
         ingredients: ["Mascarpone", "Café espresso", "Bizcochos savoiardi", "Cacao"],
-        image: "https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?w=600&h=400&fit=crop&crop=center",
+        image: "https://cdn7.kiwilimon.com/recetaimagen/35448/960x640/42520.jpg.jpg",
         category: "Postres"
     },
     {
@@ -267,7 +267,7 @@ export const products = [
         name: "Cannoli Siciliano",
         price: 5.50,
         ingredients: ["Masa frita crujiente", "Relleno de ricotta dulce", "Pistacho", "Chocolate"],
-        image: "https://images.unsplash.com/photo-1519915212116-7cfef71f1d3e?w=600&h=400&fit=crop&crop=center",
+        image: "https://www.giallozafferano.es/images/2-256/Cannoli-siciliani_1200x800.jpg",
         category: "Postres"
     },
     {
@@ -283,7 +283,7 @@ export const products = [
         name: "Affogato al Caffè",
         price: 6.00,
         ingredients: ["Bola de helado de vainilla", "Chorro de café espresso caliente"],
-        image: "https://images.unsplash.com/photo-1514481538271-cf9f99627ab4?w=600&h=400&fit=crop&crop=center",
+        image: "https://www.cucchiaio.it/content/dam/cucchiaio/it/ricette/2024/07/affogato-al-caffe/Affogato%20al%20caffe-1.jpg",
         category: "Postres"
     },
     {
@@ -291,7 +291,7 @@ export const products = [
         name: "Torta della Nonna",
         price: 7.50,
         ingredients: ["Tarta de crema pastelera", "Piñones", "Azúcar glas"],
-        image: "https://images.unsplash.com/photo-1586985289688-ca3cf47d3e6e?w=600&h=400&fit=crop&crop=center",
+        image: "https://www.rinaldinipastry.com/media/9c/04/33/1664979355/torta%20della%20nonna.jpg",
         category: "Postres"
     },
     {
@@ -299,7 +299,7 @@ export const products = [
         name: "Profiteroles",
         price: 6.90,
         ingredients: ["Bolas de pasta choux", "Rellenas de nata", "Salsa de chocolate caliente"],
-        image: "https://images.unsplash.com/photo-1606313564558-b61c39e764b6?w=600&h=400&fit=crop&crop=center",
+        image: "https://www.onceuponachef.com/images/2025/03/Profiteroles-3-1-500x500.jpg",
         category: "Postres"
     },
     {
@@ -315,7 +315,7 @@ export const products = [
         name: "Zabaione",
         price: 7.20,
         ingredients: ["Crema de yema de huevo", "Azúcar", "Vino dulce Marsala"],
-        image: "https://images.unsplash.com/photo-1587314168485-3236d6710814?w=600&h=400&fit=crop&crop=center",
+        image: "https://assets.tmecosys.com/image/upload/t_web_rdp_recipe_584x480_1_5x/img/recipe/ras/Assets/94E13326-F4B7-452C-BDD5-FA4BB676E826/Derivates/75A4E25D-558D-4EDC-9410-468BD2C2D49A.jpg",
         category: "Postres"
     },
     {
@@ -323,7 +323,7 @@ export const products = [
         name: "Cheesecake de Ricotta",
         price: 7.80,
         ingredients: ["Queso ricotta", "Base de galleta", "Mermelada de higos"],
-        image: "https://images.unsplash.com/photo-1524351199678-941a58a3df50?w=600&h=400&fit=crop&crop=center",
+        image: "https://www.recetasnestle.com.ec/sites/default/files/srh_recipes/ee1b0e4a11bc50362aca5e8a41d36343.png",
         category: "Postres"
     }
 ];

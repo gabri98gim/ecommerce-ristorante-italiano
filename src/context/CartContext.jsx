@@ -1,37 +1,49 @@
-import { createContext, useState, useContext } from 'react';
+import { createContext, useState, useContext, useEffect } from 'react';
 import toast from 'react-hot-toast';
 
-// 1. Creamos el Contexto (la nube)
 const CartContext = createContext();
 
-// 2. Creamos un "Hook Personalizado" para usarlo fácil (Puntos extra en rúbrica)
 export const useCart = () => {
     const context = useContext(CartContext);
-    if (!context) throw new Error('useCart debe usarse dentro de un CartProvider');
+    if (!context) throw new Error('useCart debe usarse dentro de CartProvider');
     return context;
 };
 
-// 3. El Proveedor que envolverá la app
 export const CartProvider = ({ children }) => {
-    const [cart, setCart] = useState([]);
+    // Inicializamos el carrito leyendo del localStorage si existe
+    const [cart, setCart] = useState(() => {
+        const savedCart = localStorage.getItem('cart');
+        return savedCart ? JSON.parse(savedCart) : [];
+    });
 
-    // Función de añadir (La que tenías en App.jsx)
-    const addToCart = (item) => {
-        setCart([...cart, item]);
-        toast.success(`¡${item.name} añadido! 🍕`, {
-            position: "bottom-center",
-            style: { background: "#1e293b", color: "#fff" }
-        });
+    // Cada vez que el carrito cambie, lo guardamos en localStorage
+    useEffect(() => {
+        localStorage.setItem('cart', JSON.stringify(cart));
+    }, [cart]);
+
+    const addToCart = (product) => {
+        setCart([...cart, product]);
+        toast.success(`Añadido: ${product.name} 🍕`);
     };
 
-    // Función para vaciar
-    const clearCart = () => setCart([]);
+    const removeFromCart = (index) => {
+        const newCart = [...cart];
+        newCart.splice(index, 1);
+        setCart(newCart);
+        toast.error("Producto eliminado 🗑️");
+    };
 
-    // Calculamos el total aquí para no repetirlo en componentes
-    const total = cart.reduce((sum, item) => sum + item.price, 0);
+    // --- NUEVA FUNCIÓN: BORRAR TODO ---
+    const clearCart = () => {
+        setCart([]); // Lo dejamos vacío
+    };
+    // ---------------------------------
+
+    // Calculamos el total
+    const total = cart.reduce((acc, item) => acc + item.price, 0);
 
     return (
-        <CartContext.Provider value={{ cart, setCart, addToCart, clearCart, total }}>
+        <CartContext.Provider value={{ cart, addToCart, removeFromCart, clearCart, total }}>
             {children}
         </CartContext.Provider>
     );
