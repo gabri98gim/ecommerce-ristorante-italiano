@@ -1,5 +1,6 @@
 import React from 'react';
-import { ChefHat, Instagram, Github, X } from 'lucide-react'; // <--- Importamos X y Github
+// Quitamos 'X' y 'Twitter' de los imports porque usaremos SVG directo y Github
+import { ChefHat, Instagram, Github } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export const Footer = () => {
@@ -37,7 +38,7 @@ export const Footer = () => {
                     <div>
                         <h3 className="text-lg font-bold mb-4 text-white">Síguenos</h3>
                         <div className="flex gap-4">
-                            {/* INSTAGRAM (Se queda, pero con tu link) */}
+                            {/* INSTAGRAM */}
                             <a
                                 href={socialLink}
                                 target="_blank"
@@ -47,24 +48,29 @@ export const Footer = () => {
                                 <Instagram size={20} />
                             </a>
 
-                            {/* FACEBOOK -> X (Nuevo) */}
+                            {/* --- LOGO OFICIAL DE X (SVG Directo) --- */}
                             <a
                                 href={socialLink}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="bg-slate-800 dark:bg-slate-900 p-2 rounded-full hover:bg-orange-500 hover:text-white transition-all text-gray-400"
+                                // Usamos flex items-center justify-center para centrar el SVG
+                                className="bg-slate-800 dark:bg-slate-900 p-2 rounded-full hover:bg-orange-500 hover:text-white transition-all text-gray-400 flex items-center justify-center"
                             >
-                                <X size={20} /> {/* Icono de X */}
+                                {/* SVG del logo de X. fill="currentColor" hace que herede el color (gris/naranja/blanco) */}
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z" />
+                                </svg>
                             </a>
+                            {/* --------------------------------------- */}
 
-                            {/* TWITTER -> GITHUB (Nuevo) */}
+                            {/* GITHUB */}
                             <a
                                 href={socialLink}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="bg-slate-800 dark:bg-slate-900 p-2 rounded-full hover:bg-orange-500 hover:text-white transition-all text-gray-400"
                             >
-                                <Github size={20} /> {/* Icono de GitHub */}
+                                <Github size={20} />
                             </a>
                         </div>
                     </div>
