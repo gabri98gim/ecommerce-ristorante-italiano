@@ -1,12 +1,11 @@
 import React from 'react';
-import { ChefHat, Instagram, Facebook, Twitter } from 'lucide-react';
+import { ChefHat, Instagram, Github, X } from 'lucide-react'; // <--- Importamos X y Github
 import { Link } from 'react-router-dom';
 
 export const Footer = () => {
+    const socialLink = "https://github.com/gabri98gim"; // Tu enlace para todos
+
     return (
-        // CAMBIO CLAVE: 
-        // - bg-slate-900 (Estándar) -> dark:bg-slate-950 (Más oscuro en modo noche)
-        // - border-t (Línea superior) -> dark:border-slate-800 (Gris oscuro sutil)
         <footer className="bg-gray-900 dark:bg-slate-950 text-white py-12 border-t-0 dark:border-t dark:border-slate-800 transition-colors duration-300">
             <div className="max-w-6xl mx-auto px-4">
 
@@ -38,14 +37,34 @@ export const Footer = () => {
                     <div>
                         <h3 className="text-lg font-bold mb-4 text-white">Síguenos</h3>
                         <div className="flex gap-4">
-                            <a href="#" className="bg-slate-800 dark:bg-slate-900 p-2 rounded-full hover:bg-orange-500 hover:text-white transition-all text-gray-400">
+                            {/* INSTAGRAM (Se queda, pero con tu link) */}
+                            <a
+                                href={socialLink}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="bg-slate-800 dark:bg-slate-900 p-2 rounded-full hover:bg-orange-500 hover:text-white transition-all text-gray-400"
+                            >
                                 <Instagram size={20} />
                             </a>
-                            <a href="#" className="bg-slate-800 dark:bg-slate-900 p-2 rounded-full hover:bg-orange-500 hover:text-white transition-all text-gray-400">
-                                <Facebook size={20} />
+
+                            {/* FACEBOOK -> X (Nuevo) */}
+                            <a
+                                href={socialLink}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="bg-slate-800 dark:bg-slate-900 p-2 rounded-full hover:bg-orange-500 hover:text-white transition-all text-gray-400"
+                            >
+                                <X size={20} /> {/* Icono de X */}
                             </a>
-                            <a href="#" className="bg-slate-800 dark:bg-slate-900 p-2 rounded-full hover:bg-orange-500 hover:text-white transition-all text-gray-400">
-                                <Twitter size={20} />
+
+                            {/* TWITTER -> GITHUB (Nuevo) */}
+                            <a
+                                href={socialLink}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="bg-slate-800 dark:bg-slate-900 p-2 rounded-full hover:bg-orange-500 hover:text-white transition-all text-gray-400"
+                            >
+                                <Github size={20} /> {/* Icono de GitHub */}
                             </a>
                         </div>
                     </div>
